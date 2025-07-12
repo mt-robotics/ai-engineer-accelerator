@@ -4,7 +4,7 @@ import { Calendar, CheckCircle2, Circle, Trophy, Zap, Clock, Book, Target, Star,
 const getAPIConfig = () => {
   // Configuration will be loaded from config.js
   return window.AITrackerConfig || {
-    API_URL: 'http://127.0.0.1:8000',
+    API_URL: 'http://localhost:8000',
     DEBUG: false,
     ENVIRONMENT: 'development'
   };
@@ -140,8 +140,7 @@ const AIProgressTracker = () => {
     setShowCelebration(true);
     setTimeout(() => setShowCelebration(false), 2000);
     
-    // Save to backend (Railway.app integration)
-    saveProgressToBackend();
+    // Note: saveProgressToBackend() will be called by useEffect when state updates
   };
 
   // Mark task as struggled (difficulty calibration)
@@ -318,6 +317,14 @@ const AIProgressTracker = () => {
   useEffect(() => {
     setSpaceRepetitionQueue(generateReviewItems());
   }, [completedTasks]);
+
+  // Save progress whenever key state changes
+  useEffect(() => {
+    // Only save if we have some meaningful data (not initial load)
+    if (completedTasks.size > 0 || totalXP > 0) {
+      saveProgressToBackend();
+    }
+  }, [completedTasks, totalXP, portfolioItems, certificationProgress, notes]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">

@@ -35,7 +35,7 @@ class AITrackerConfigBuilder:
 
         # Extract frontend-relevant configuration
         config = {
-            "API_URL": os.getenv("FRONTEND_API_URL", "http://127.0.0.1:8000"),
+            "API_URL": os.getenv("FRONTEND_API_URL", "http://localhost:8000"),
             "DEBUG": os.getenv("API_DEBUG", "false").lower() == "true",
             "ENVIRONMENT": os.getenv("ENVIRONMENT", environment),
             "ANALYTICS_ENABLED": os.getenv("ANALYTICS_ENABLED", "true").lower()
