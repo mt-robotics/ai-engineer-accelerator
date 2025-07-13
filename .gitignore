@@ -250,3 +250,6 @@ Thumbs.db
 .vscode/settings.json
 .vscode/launch.json
 .vscode/tasks.json
+
+# User Data and runtime files
+backend/data/
