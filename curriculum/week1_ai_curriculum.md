@@ -14,7 +14,7 @@
 ## 📚 **Day 1: Foundation & AI Context (3 hours)**
 
 ### **Hour 1: Review Your Existing Knowledge**
-**Action**: Read your `1-python-exception-handling.md` file completely
+**Action**: Read your [1-python-exception-handling.md](1-python-exception-handling.md) file completely
 - Focus on sections 6 (Real-World Examples), 12 (Practical Patterns)
 - Take notes on patterns you haven't used before
 - Identify which examples feel most/least familiar
