@@ -253,3 +253,5 @@ Thumbs.db
 
 # User Data and runtime files
 backend/data/
+/_personal
+/backend/data
